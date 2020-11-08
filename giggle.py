@@ -23,7 +23,16 @@ def do_attendance():
         username = soup.select('#profile > h2')
         
         print(username[0].text + "님, 환영합니다!")
-
+        
+        print("1등 시도")
+        
+        i = 0
+        while i==10:
+            req = s.post('https://gigglehd.com/gg/?error_return_url=/gg/attendance&mid=attendance&vid=&ruleset=Attendanceinsert&act=procAttendanceInsertAttendance', headers=headers)
+            i = i + 1
+        
+        time.sleep(1)
+        
         req = s.get('https://gigglehd.com/gg/attendance')
         html = req.text
 
